@@ -185,13 +185,13 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     alwaysOnTop,
     backgroundColor: '#2F384B',
-    fullscreenable: false,
+    fullscreenable: true,
     frame: false,
     icon:
       process.platform === 'darwin'
         ? path.join(__static, 'icon--macos.png')
         : path.join(__static, 'icon.png'),
-    resizable: false,
+    resizable: true,
     useContentSize: true,
     width: 360,
     height: 478,

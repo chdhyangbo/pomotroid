@@ -2,14 +2,14 @@
   <div class="Timer-wrapper">
     <app-audio />
     <app-tray-icon />
-    <app-timer-dial
+    <app-timer-channel
       :current-time="currentTime"
       :minutes="minutes"
       :timerActive="timerActive"
     >
       <p class="Dial-time" v-if="!timerStarted">{{ prettyMinutes }}</p>
       <p class="Dial-time" v-else>{{ prettyTime }}</p>
-    </app-timer-dial>
+    </app-timer-channel>
 
     <section class="Container Button-wrapper">
       <transition name="fade" mode="out-in">
@@ -125,6 +125,8 @@ import appAudio from '@/components/Audio'
 import appTrayIcon from '@/components/TrayIcon'
 import appTimerController from '@/components/timer/Timer-controller'
 import appTimerDial from '@/components/timer/Timer-dial'
+import appTimerChannel from '@/components/timer/Timer-channel'
+
 import appTimerFooter from '@/components/timer/Timer-footer'
 import { EventBus } from '@/utils/EventBus'
 import { logger } from '@/utils/logger'
@@ -136,6 +138,7 @@ export default {
     appTrayIcon,
     appTimerController,
     appTimerDial,
+    appTimerChannel,
     appTimerFooter
   },
 
@@ -418,5 +421,7 @@ export default {
 .Timer-wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 </style>
