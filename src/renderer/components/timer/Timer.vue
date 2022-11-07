@@ -7,8 +7,6 @@
       :minutes="minutes"
       :timerActive="timerActive"
     >
-      <p class="Dial-time" v-if="!timerStarted">{{ prettyMinutes }}</p>
-      <p class="Dial-time" v-else>{{ prettyTime }}</p>
     </app-timer-channel>
 
     <section class="Container Button-wrapper">

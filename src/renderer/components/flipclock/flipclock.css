@@ -109,12 +109,12 @@
 .flip-clock-wrapper ul {
   position: relative;
   float: left;
-  margin: 5px;
-  width: 60px;
-  height: 90px;
-  font-size: 80px;
+  margin: 1vw;
+  width: 22vw;
+  height: 36vw;
+  font-size: 36vw;
   font-weight: bold;
-  line-height: 87px;
+  line-height: 36vw;
   border-radius: 6px;
   background: #000;
 }
@@ -126,7 +126,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  line-height: 87px;
+  line-height: 36vw;
   text-decoration: none !important;
 }
 
@@ -137,9 +137,9 @@
 .flip-clock-wrapper ul li a {
   display: block;
   height: 100%;
-  -webkit-perspective: 200px;
-  -moz-perspective: 200px;
-  perspective: 200px;
+  -webkit-perspective: 900px;
+  -moz-perspective: 900px;
+  perspective: 900px;
   margin: 0 !important;
   overflow: visible !important;
   cursor: default !important;
@@ -151,7 +151,7 @@
   left: 0;
   width: 100%;
   height: 50%;
-  font-size: 80px;
+  font-size: 36vw;
   overflow: hidden;
   outline: 1px solid transparent;
 }
@@ -175,7 +175,7 @@
 .flip-clock-wrapper ul li a div.up:after {
   content: '';
   position: absolute;
-  top: 44px;
+  top: 17.9vw;
   left: 0;
   z-index: 5;
   width: 100%;
@@ -202,16 +202,16 @@
   width: 100%;
   height: 200%;
   /* color: #ccc; */
-  color: white;
+  color: #ccc;
   text-shadow: 0 1px 2px #000;
   text-align: center;
   /* background-color: #333; */
   /* background: rgba(189, 208, 255, 1); */
-  background: #111;
+  background: #333;
   opacity: 100%;
   border-radius: 6px;
   border-radius: 6px;
-  font-size: 70px;
+  font-size: 36vw;
 }
 
 .flip-clock-wrapper ul li a div.up div.inn {
@@ -242,23 +242,24 @@
   float: left;
   display: inline-block;
   position: relative;
-  width: 20px;
-  height: 100px;
+  width: 1vw;
+  height: 36vw;
 }
 
 .flip-clock-divider:first-child {
   width: 0;
 }
 
+
 .flip-clock-dot {
   display: block;
   background: #323434;
-  width: 10px;
-  height: 10px;
+  width: 1vw;
+  height: 1vw;
   position: absolute;
   border-radius: 50%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  left: 5px;
+  /* left: 5px; */
 }
 
 .flip-clock-divider .flip-clock-label {
@@ -278,12 +279,20 @@
 }
 
 .flip-clock-dot.top {
-  top: 30px;
+  top: 9vw;
 }
 
+
 .flip-clock-dot.bottom {
-  bottom: 30px;
+  bottom: 9vw;
 }
+
+.flip-clock-divider:first-child .flip-clock-dot.bottom , .flip-clock-divider:first-child .flip-clock-dot.top{
+  display: none;
+}
+
+
+
 
 @-webkit-keyframes asd {
   0% {
