@@ -193,8 +193,8 @@ function createWindow() {
         : path.join(__static, 'icon.png'),
     resizable: true,
     useContentSize: true,
-    width: 360,
-    height: 478,
+    width: 1312,
+    height: 680,
     webPreferences: {
       backgroundThrottling: false,
       nodeIntegration: true,
