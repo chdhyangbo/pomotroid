@@ -7,113 +7,113 @@
       :minutes="minutes"
       :timerActive="timerActive"
     >
+      <section class="Container Button-wrapper">
+        <transition name="fade" mode="out-in">
+          <div
+            class="Button"
+            v-if="!timerStarted"
+            @click="startTimer"
+            :key="'start'"
+          >
+            <div class="Button-icon-wrapper">
+              <svg
+                version="1.2"
+                baseProfile="tiny"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 7.6 15"
+                xml:space="preserve"
+                height="15px"
+                class="Icon--start"
+              >
+                <polygon
+                  fill="var(--color-foreground)"
+                  points="0,0 0,15 7.6,7.4 "
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="Button"
+            v-if="timerStarted && !timerActive"
+            @click="resumeTimer"
+            :key="'resume'"
+          >
+            <div class="Button-icon-wrapper">
+              <svg
+                version="1.2"
+                baseProfile="tiny"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 7.6 15"
+                xml:space="preserve"
+                height="15px"
+              >
+                <polygon
+                  fill="var(--color-foreground)"
+                  points="0,0 0,15 7.6,7.4 "
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="Button"
+            v-else-if="timerStarted && timerActive"
+            @click="pauseTimer"
+            :key="'pause'"
+          >
+            <div class="Button-icon-wrapper">
+              <svg
+                version="1.2"
+                baseProfile="tiny"
+                id="Layer_2"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 10.9 18"
+                xml:space="preserve"
+                height="15px"
+                class="Icon--pause"
+              >
+                <line
+                  fill="none"
+                  stroke="var(--color-foreground)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  x1="1.5"
+                  y1="1.5"
+                  x2="1.5"
+                  y2="16.5"
+                />
+                <line
+                  fill="none"
+                  stroke="var(--color-foreground)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  x1="9.4"
+                  y1="1.5"
+                  x2="9.4"
+                  y2="16.5"
+                />
+              </svg>
+            </div>
+          </div>
+        </transition>
+      </section>
+      <app-timer-footer />
+      <app-timer-controller />
+
     </app-timer-channel>
 
-    <section class="Container Button-wrapper">
-      <transition name="fade" mode="out-in">
-        <div
-          class="Button"
-          v-if="!timerStarted"
-          @click="startTimer"
-          :key="'start'"
-        >
-          <div class="Button-icon-wrapper">
-            <svg
-              version="1.2"
-              baseProfile="tiny"
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              viewBox="0 0 7.6 15"
-              xml:space="preserve"
-              height="15px"
-              class="Icon--start"
-            >
-              <polygon
-                fill="var(--color-foreground)"
-                points="0,0 0,15 7.6,7.4 "
-              />
-            </svg>
-          </div>
-        </div>
-        <div
-          class="Button"
-          v-if="timerStarted && !timerActive"
-          @click="resumeTimer"
-          :key="'resume'"
-        >
-          <div class="Button-icon-wrapper">
-            <svg
-              version="1.2"
-              baseProfile="tiny"
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              viewBox="0 0 7.6 15"
-              xml:space="preserve"
-              height="15px"
-            >
-              <polygon
-                fill="var(--color-foreground)"
-                points="0,0 0,15 7.6,7.4 "
-              />
-            </svg>
-          </div>
-        </div>
-        <div
-          class="Button"
-          v-else-if="timerStarted && timerActive"
-          @click="pauseTimer"
-          :key="'pause'"
-        >
-          <div class="Button-icon-wrapper">
-            <svg
-              version="1.2"
-              baseProfile="tiny"
-              id="Layer_2"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              viewBox="0 0 10.9 18"
-              xml:space="preserve"
-              height="15px"
-              class="Icon--pause"
-            >
-              <line
-                fill="none"
-                stroke="var(--color-foreground)"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-miterlimit="10"
-                x1="1.5"
-                y1="1.5"
-                x2="1.5"
-                y2="16.5"
-              />
-              <line
-                fill="none"
-                stroke="var(--color-foreground)"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-miterlimit="10"
-                x1="9.4"
-                y1="1.5"
-                x2="9.4"
-                y2="16.5"
-              />
-            </svg>
-          </div>
-        </div>
-      </transition>
-    </section>
-
-    <app-timer-footer />
-    <app-timer-controller />
   </div>
 </template>
 
@@ -137,7 +137,7 @@ export default {
     appTimerController,
     appTimerDial,
     appTimerChannel,
-    appTimerFooter
+    appTimerFooter,
   },
 
   data() {
@@ -146,7 +146,7 @@ export default {
       minutes: 1,
       timerActive: false,
       timerStarted: false,
-      timerWorker: null
+      timerWorker: null,
     }
   },
 
@@ -193,7 +193,7 @@ export default {
       const seconds = time - minutes * 60
       return {
         minutes,
-        seconds
+        seconds,
       }
     },
 
@@ -211,9 +211,9 @@ export default {
 
       return {
         remainingMinutes,
-        remainingSeconds
+        remainingSeconds,
       }
-    }
+    },
   },
 
   methods: {
@@ -254,7 +254,7 @@ export default {
           this.currentTime = message.data.elapsed
           EventBus.$emit('timer-tick', {
             elapsed: message.data.elapsed,
-            total: message.data.totalSeconds
+            total: message.data.totalSeconds,
           })
           break
         default:
@@ -319,7 +319,7 @@ export default {
       } else {
         this.startTimer()
       }
-    }
+    },
   },
 
   mounted() {
@@ -328,7 +328,7 @@ export default {
 
     this.initTimer()
 
-    EventBus.$on('timer-init', opts => {
+    EventBus.$on('timer-init', (opts) => {
       // clear previous timers
       this.resetTimer()
       this.initTimer()
@@ -364,14 +364,14 @@ export default {
     // Bind event listener to Space key
     window.addEventListener(
       'keypress',
-      e => {
+      (e) => {
         if (e.code === 'Space') {
           this.toggleTimer()
         }
       },
       true
     )
-  }
+  },
 }
 </script>
 
@@ -397,9 +397,12 @@ export default {
 }
 
 .Button-wrapper {
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: center;
-  margin: 20px 0 10px 0;
+  // margin: 20px 0 10px 0;
+  z-index: 10;
 }
 
 .Button-icon-wrapper {
@@ -420,6 +423,6 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 85px);
 }
 </style>

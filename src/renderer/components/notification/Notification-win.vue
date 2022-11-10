@@ -27,8 +27,8 @@ export default {
     callNotification(opts) {
       notifier.notify(
         {
-          appName: 'com.splode.pomotroid',
-          title: opts.title || 'Focus Round Complete',
+          appName: 'flipclock番茄钟',
+          title: opts.title || '已完成此轮专注',
           message: opts.message,
           icon: opts.icon || path.join(__static, 'icon.png'),
           sound: false
@@ -43,22 +43,22 @@ export default {
 
     notifyLongBreak() {
       this.callNotification({
-        message: `Begin a ${this.timeLongBreak} minute long break.`,
+        message: `开始 ${this.timeLongBreak} 分钟的长时间休息.`,
         icon: path.join(__static, 'icon--blue.png')
       })
     },
 
     notifyShortBreak() {
       this.callNotification({
-        message: `Begin a ${this.timeShortBreak} minute short break.`,
+        message: `开始 ${this.timeShortBreak} 分钟的短时间休息.`,
         icon: path.join(__static, 'icon--green.png')
       })
     },
 
     notifyWork() {
       this.callNotification({
-        title: 'Break Finished',
-        message: `Begin focusing for ${this.timeWork} minutes.`
+        title: '休息结束',
+        message: `开始 ${this.timeWork} 分钟的专注.`
       })
     }
   },

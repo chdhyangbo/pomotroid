@@ -153,7 +153,7 @@ export default {
   margin-top: 35px;
   position: relative;
   width: 100%;
-  height: 75%;
+  height: 100%;
 }
 
 .Dial-label {

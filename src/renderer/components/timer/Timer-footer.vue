@@ -220,6 +220,11 @@ export default {
   align-items: center;
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 9
 }
 
 .Icon--mute {
