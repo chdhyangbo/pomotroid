@@ -1,7 +1,7 @@
 <template>
   <div class="Dial-wrapper">
     <slot></slot>
-    <!-- <p class="Dial-label">{{ currentRoundDisplay }}</p> -->
+    <p class="Dial-label">{{ currentRoundDisplay }}</p>
     <flipclock :options="options" class="flip-clock" ref="flipClock"></flipclock>
   </div>
 </template>
@@ -159,8 +159,9 @@ export default {
 .Dial-label {
   letter-spacing: 0.1em;
   position: absolute;
-  top: 66%;
   text-transform: uppercase;
+  top: -8%;
+  font-size: 14px;
 }
 
 .Dial-bg {

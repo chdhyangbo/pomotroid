@@ -30,7 +30,7 @@
           />
         </g>
       </svg>
-      <h2>FlipClock</h2>
+      <h2>FLIPCLOCK</h2>
       <p class="label">
         Version: {{ version }}
         <span class="link" @click="openUrl(releaseUrl)">(release notes)</span>
